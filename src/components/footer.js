@@ -4,7 +4,7 @@ class Footer extends Component{
     render(){
         return (
             <div>
-                My Footer
+                My Footer @ AliceCode 2020
             </div>
         );
     }
