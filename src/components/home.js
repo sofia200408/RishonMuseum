@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import { Link} from "react-router-dom";
+
 
 class Home extends Component
 {
@@ -23,7 +25,9 @@ class Home extends Component
                 User Name:
                 <input type="text" value={this.state.value} onChange={this.handleChange}/>
             </label>
-            <button onClick={this.handleClick}>Click</button>
+            <Link to="/content"> 
+                <button type="button"> Click </button> 
+            </Link>
         </form>
         )
     }
@@ -31,4 +35,3 @@ class Home extends Component
 
 export default Home;
 
-//handleclick function-username change place to header file and display content file

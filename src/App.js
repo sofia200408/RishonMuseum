@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-import { BrowserRouter, Switch } from "react-router-dom";
+import { BrowserRouter} from "react-router-dom";
 import Header from './components/header.js';
 import Footer from './components/footer.js';
-import Content from './components/content.js';
-import Home from './components/home.js';
+import Routes from './Routes.js';
+
 
 class App extends Component
 {
@@ -12,9 +12,7 @@ class App extends Component
     <BrowserRouter>
       <div>
         <Header />
-        <Switch>
-          <Home />
-        </Switch>
+        <Routes />
         <Footer />
       </div>
     </BrowserRouter>
