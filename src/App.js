@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Switch } from "react-router-dom";
 import Header from './components/header.js';
 import Footer from './components/footer.js';
 import Content from './components/content.js';
@@ -12,8 +12,9 @@ class App extends Component
     <BrowserRouter>
       <div>
         <Header />
-        <Home />
-        <Content />
+        <Switch>
+          <Home />
+        </Switch>
         <Footer />
       </div>
     </BrowserRouter>
