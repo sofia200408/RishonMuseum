@@ -10,12 +10,11 @@ class Routers extends Component
         return (
             <BrowserRouter>
                 <Switch>
-                    <Route path='/' component={Home} />
                     <Route path='/content' component={Content} />
+                    <Route exact path='/' component={Home} />
                 </Switch>
             </BrowserRouter>
         )
     }
-
 }
 export default Routers;
