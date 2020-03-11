@@ -1,10 +1,11 @@
 import React,{Component} from 'react'
+import './footer.css'
 
 class Footer extends Component{
     render(){
         return (
             <div>
-                My Footer @ AliceCode 2020
+                <span>My Footer @ AliceCode 2020</span>
             </div>
         );
     }

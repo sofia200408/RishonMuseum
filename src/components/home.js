@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
 import { Link} from "react-router-dom";
-import Content from './content';
 
-class Home extends Component
-{
+class Home extends Component{
+    data;
     constructor(props){
         super(props);
+
         this.handleChange=this.handleChange.bind(this);
-        this.handleClick=this.handleChange.bind(this);
-        
+        this.handleFormSubmit=this.handleFormSubmit.bind(this);
+
         this.state={
             input:''
         };
@@ -18,16 +18,42 @@ class Home extends Component
             input: event.target.value
         });
     }
+     
+    handleFormSubmit(event){
+        sessionStorage.setItem('mySessionStorageDate',JSON.stringify(this.state.input));
+        event.preventDefault();
+        //alert(this.state.input);
+        
+    }
+    
+    componentDidMount(){
+        this.data=sessionStorage.getItem('mySessionStorageDate')
+        //JSON.parse(sessionStorage.getItem('mySessionStorageDate'));
+        //alert(this.data);
+
+
+        if(sessionStorage.getItem('mySessionStorageDate'))
+        {
+            this.setState({
+                input: this.data
+            })
+        }
+        else{
+            this.setState({
+                input:''
+            })
+        }
+    }
 
     render(){
         return(
             <form>
                 <label>
                     User Name:
-                    <input type="text" onChange={this.handleChange}/>
+                    <input type="text" onChange={this.handleChange} placeholder="Type your name" required/>
                 </label>
                 <Link to="/content">
-                    <button>Click</button>                
+                    <button onClick={this.handleFormSubmit}>Click</button>
                 </Link>
             </form>
         )
