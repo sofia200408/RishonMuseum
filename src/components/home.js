@@ -19,9 +19,8 @@ class Home extends Component{
         });
     }
      
-    handleFormSubmit(event){
+    handleFormSubmit(){
         sessionStorage.setItem('mySessionStorageDate',JSON.stringify(this.state.input));
-        event.preventDefault();
         //alert(this.state.input);
         
     }
@@ -52,10 +51,24 @@ class Home extends Component{
                     User Name:
                     <input type="text" onChange={this.handleChange} placeholder="Type your name" required/>
                 </label>
-                <Link to="/content">
+            <div>
+                <label>Number of Users: 
+                    <input type="text" placeholder="Type number of users" required/>
+                </label>
+                <label>City:
+                    <input type="text" placeholder="Type city" required/>
+                </label>
+             </div>
+             <div>
+             <label>Team Number:
+                    <input type="text" placeholder="Type team-number" required/>
+                </label>
+             </div>
+             <Link to="/content">
                     <button onClick={this.handleFormSubmit}>Click</button>
-                </Link>
+            </Link>
             </form>
+           
         )
     }
 }

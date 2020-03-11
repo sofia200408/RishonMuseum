@@ -7,7 +7,7 @@ class Header extends Component{
     render(){
         return(
           <div>
-              Home {sessionStorage.getItem('mySessionStorageDate')}
+              <span>Home {sessionStorage.getItem('mySessionStorageDate')}</span>
           </div>  
         );
     }
