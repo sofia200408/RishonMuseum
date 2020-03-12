@@ -28,19 +28,19 @@ class Home extends Component{
             <form>
                 <label>
                     User Name:
-                    <input type="text" onChange={this.handleChange} placeholder="Type your name" required/>
+                    <input type="text" onChange={this.handleChange} required/>
                 </label>
             <div>
                 <label>Number of Users: 
-                    <input type="text" placeholder="Type number of users" required/>
+                    <input type="text" required/>
                 </label>
                 <label>City:
-                    <input type="text" placeholder="Type city" required/>
+                    <input type="text" required/>
                 </label>
              </div>
              <div>
              <label>Team Number:
-                    <input type="text" placeholder="Type team-number" required/>
+                    <input type="text" required/>
                 </label>
              </div>
              <Link to="/codescreen">

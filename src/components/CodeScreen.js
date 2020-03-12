@@ -11,7 +11,7 @@ class CodeScreen extends Component{
               <label>Question Code:
                     <input type="text" required/>
                 </label>
-                <Link to="/content">
+                <Link to="/Questions">
                     <button >Click</button>
                 </Link>
           </div>  
