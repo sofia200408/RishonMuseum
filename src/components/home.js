@@ -20,28 +20,7 @@ class Home extends Component{
     }
      
     handleFormSubmit(){
-        sessionStorage.setItem("mySessionStorageDate",JSON.stringify(this.state.input));
-        //alert(this.state.input);
-        
-    }
-    
-    componentDidMount(){
-        //this.data=sessionStorage.getItem('mySessionStorageDate')
-        //JSON.parse(sessionStorage.getItem('mySessionStorageDate'));
-        //alert(this.data);
-
-
-        // if(sessionStorage.getItem('mySessionStorageDate'))
-        // {
-        //     this.setState({
-        //         input: this.data
-        //     })
-        // }
-        // else{
-        //     this.setState({
-        //         input:''
-        //     })
-        // }
+        sessionStorage.setItem("mySessionStorageDate",JSON.stringify(this.state.input));        
     }
 
     render(){
@@ -64,7 +43,7 @@ class Home extends Component{
                     <input type="text" placeholder="Type team-number" required/>
                 </label>
              </div>
-             <Link to="/content">
+             <Link to="/codescreen">
                     <button onClick={this.handleFormSubmit}>Click</button>
             </Link>
             </form>
