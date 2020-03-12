@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { Link} from "react-router-dom";
+import './home.css'
 
 class Home extends Component{
     data;
@@ -32,7 +33,7 @@ class Home extends Component{
                 </label>
             <div>
                 <label>Number of Users: 
-                    <input type="text" required/>
+                    <input type="number" required/>
                 </label>
                 <label>City:
                     <input type="text" required/>
@@ -40,11 +41,11 @@ class Home extends Component{
              </div>
              <div>
              <label>Team Number:
-                    <input type="text" required/>
+                    <input type="number" required/>
                 </label>
              </div>
              <Link to="/codescreen">
-                    <button onClick={this.handleFormSubmit}>Click</button>
+                <button onClick={this.handleFormSubmit}>Click</button>
             </Link>
             </form>
            
