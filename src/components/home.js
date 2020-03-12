@@ -20,28 +20,28 @@ class Home extends Component{
     }
      
     handleFormSubmit(){
-        sessionStorage.setItem('mySessionStorageDate',JSON.stringify(this.state.input));
+        sessionStorage.setItem("mySessionStorageDate",JSON.stringify(this.state.input));
         //alert(this.state.input);
         
     }
     
     componentDidMount(){
-        this.data=sessionStorage.getItem('mySessionStorageDate')
+        //this.data=sessionStorage.getItem('mySessionStorageDate')
         //JSON.parse(sessionStorage.getItem('mySessionStorageDate'));
         //alert(this.data);
 
 
-        if(sessionStorage.getItem('mySessionStorageDate'))
-        {
-            this.setState({
-                input: this.data
-            })
-        }
-        else{
-            this.setState({
-                input:''
-            })
-        }
+        // if(sessionStorage.getItem('mySessionStorageDate'))
+        // {
+        //     this.setState({
+        //         input: this.data
+        //     })
+        // }
+        // else{
+        //     this.setState({
+        //         input:''
+        //     })
+        // }
     }
 
     render(){
