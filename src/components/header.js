@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import './header.css';
-import logo from '../logo/type2.png';
+import logo from '../img/type2.png';
 
 console.log(logo);
 
