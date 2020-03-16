@@ -5,7 +5,8 @@ class Hint extends Component{
     render(){
         return(
             <div>
-                Hint
+                Hint-here will be the hint
+                <br />
                 <Link to="/Questions">
                     <button >Back to Question</button>
                 </Link>
