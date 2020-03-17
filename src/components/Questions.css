@@ -2,24 +2,14 @@ li{
     height: 30px;
 }
 
-.time{
-    width: 45%;
-    box-sizing: padding-box;
-    padding: 10px;
-    display: inline-block;
-    background: #4e357e;
-    border: 0;
-    color: #fff;
+#Button{
     display: none;
 }
 
-#stopwatch{
-    border:1px solid #999;
-    padding:20px;
-    border-radius:10px;
-    max-width:250px;
-    position:fixed;
-    font-weight: bold;
-    font-size: 48px;
+#watch{
+    font-size: 40px;
+}
 
+#center{
+    margin-left:600px;
 }

@@ -9,7 +9,8 @@ class Header extends Component{
     render(){
         return(
           <div>
-              <span>Welcome {JSON.parse(sessionStorage.getItem("mySessionStorageDate"))}</span>
+              <span>Search for Alice <br />
+                  Welcome {JSON.parse(sessionStorage.getItem("mySessionStorageDate"))}</span>
               <img src={logo} alt="Logo"/>
           </div>  
         );
