@@ -3,6 +3,7 @@
 body{
     background-color: pink;
     font-family: 'Alef', sans-serif;
+    height: 100%;
 }
 
 button{
