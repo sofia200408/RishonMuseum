@@ -47,11 +47,6 @@ class Home extends Component{
                         <input type="text" required/>
                     </label>
                 </div>
-                <div>
-                <label>Team Number:
-                        <input type="number" required/>
-                    </label>
-                </div>
                 <Link to="/codescreen">
                     <button onClick={this.handleFormSubmit}>Click</button>
                 </Link>
