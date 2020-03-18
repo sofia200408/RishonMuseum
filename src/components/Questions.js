@@ -1,5 +1,4 @@
 import React,{Component} from 'react';
-import { Link} from "react-router-dom";
 import './Questions.css'
 
 class Questions extends Component{
@@ -87,9 +86,10 @@ class Questions extends Component{
                         <li><button>answer2</button></li>
                         <li><button>answer3</button></li>
                     </ol>
-                    <Link to="/Hint">
+                    <button>Click for a Hint</button>
+                    {/*<Link to="/Hint">
                         <button >Click for a Hint</button>
-                    </Link>
+        </Link>*/}
                 </div>
                 <div id="watch">
                     {this.state.counter}:{this.state.miliseconds}
