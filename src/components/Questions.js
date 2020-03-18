@@ -35,7 +35,7 @@ class Questions extends Component{
             var num = (Number(this.state.miliseconds) + 1).toString(),
                 count = this.state.counter;
 
-            if (Number(this.state.miliseconds) === 99) {
+            if (Number(this.state.miliseconds) === 59) {
                 count = (Number(this.state.counter) + 1).toString();
                 num = '00';
             }
