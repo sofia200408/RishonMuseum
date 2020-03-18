@@ -36,7 +36,7 @@ class Home extends Component{
             <hr />
             <div className="box">
                     <label>
-                        User Name:
+                        Team Name:
                         <input type="text" onChange={this.handleChange} required/>
                     </label>
                 <div>
