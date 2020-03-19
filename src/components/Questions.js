@@ -11,12 +11,14 @@ class Questions extends Component{
         this.onButtonReset = this.onButtonReset.bind(this);
         this.start = this.start.bind(this);
 
+
         this.state={
             timer: null,
             counter: '00',
             miliseconds: '00',
             startDisabled: true,
-            stopDisabled: false
+            stopDisabled: false,
+            showing:true
         }
     }
     componentDidMount() {
@@ -75,8 +77,11 @@ class Questions extends Component{
         });
     }
 
+
+
     
     render(){
+        const {showing}=this.state;
         return(
             <div>
                 <div id="center">
@@ -86,11 +91,14 @@ class Questions extends Component{
                         <li><button>answer2</button></li>
                         <li><button>answer3</button></li>
                     </ol>
-                    <button>Click for a Hint</button>
-                    {/*<Link to="/Hint">
-                        <button >Click for a Hint</button>
-        </Link>*/}
+                <div>
+                    <button onClick={() => this.setState({ showing: !showing })}>Hint</button>
+                        { showing 
+                            ? <div>This is the Hint</div>
+                            : null
+                        }
                 </div>
+            </div>
                 <div id="watch">
                     {this.state.counter}:{this.state.miliseconds}
 
@@ -98,7 +106,7 @@ class Questions extends Component{
                     <button title="Stop" id="Button"></button>
                     <button title="Reset" id="Button"></button>
                 </div>
-            </div>
+                </div>
         );
     }
 
