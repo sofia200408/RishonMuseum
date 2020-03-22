@@ -13,20 +13,45 @@ class Home extends Component{
         this.handleFormSubmit=this.handleFormSubmit.bind(this);
 
         this.state={
-            input:''
+            TeamName:null,
+            NumberOfUsers:null,
+            City:null,
+
+            formErrors:{
+                TeamName:'',
+                NumberOfUsers:'',
+                City:''
+            }
         };
     }
-    handleChange(event){
-        this.setState({
-            input: event.target.value
-        });
+ 
+    handleChange(e){
+        e.preventDefault();
+        const {name ,value}=e.target;
+        let formErrors=this.state.formErrors;
+
+        switch(name){
+            case 'TeamName':
+                formErrors.TeamName= value.length<3 && value.length>0
+                ? "minimum 3 letters required":"";
+                break;
+            case 'City':
+                formErrors.City= value.length<3 && value.length>0
+                ? "minimum 3 letters required":"";
+                break;
+            default:
+                break;
+        }
+
+        this.setState({ formErrors, [name]:value })
     }
      
     handleFormSubmit(){
-        sessionStorage.setItem("mySessionStorageDate",JSON.stringify(this.state.input));        
+        sessionStorage.setItem("mySessionStorageDate",JSON.stringify(this.state.TeamName));        
     }
 
     render(){
+        const {formErrors}=this.state;
         return(
         <form>
             <img id="img2" src={logo} alt="Logo" />
@@ -35,18 +60,25 @@ class Home extends Component{
             </div>
             <hr />
             <div className="box">
-                    <label>
-                        Team Name:
-                        <input type="text" onChange={this.handleChange} required/>
+                    <label>Team Name:
+                        <input type="text" 
+                        name="TeamName" 
+                        onChange={this.handleChange}/>
+                        {formErrors.TeamName.length>0 &&(<span className="errorMessage">{formErrors.TeamName}</span>
+                        )}
                     </label>
-                <div>
+                    <br />
                     <label>Number of Users: 
-                        <input type="number" required/>
+                        <input type="number"/>
                     </label>
                     <label>City:
-                        <input type="text" required/>
+                        <input type="text" 
+                        name="City" 
+                        onChange={this.handleChange}/>
+                        {formErrors.City.length>0 &&(<span className="errorMessage">{formErrors.City}</span>
+                        )}
                     </label>
-                </div>
+                    <br />
                 <Link to="/codescreen">
                     <button onClick={this.handleFormSubmit}>Click</button>
                 </Link>

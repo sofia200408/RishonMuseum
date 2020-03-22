@@ -31,3 +31,9 @@ hr{
 #text{
     margin-left:760px;
 }
+
+.errorMessage{
+    color: red;
+    background-color: pink;
+    font-size: 15px;
+}
