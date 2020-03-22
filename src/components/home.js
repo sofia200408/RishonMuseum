@@ -19,7 +19,6 @@ class Home extends Component{
 
             formErrors:{
                 TeamName:'',
-                NumberOfUsers:'',
                 City:''
             }
         };
@@ -69,7 +68,7 @@ class Home extends Component{
                     </label>
                     <br />
                     <label>Number of Users: 
-                        <input type="number"/>
+                        <input type="number" min="0"/>
                     </label>
                     <label>City:
                         <input type="text" 
