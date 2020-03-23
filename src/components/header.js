@@ -5,7 +5,7 @@ import logo from '../img/type2.png';
 console.log(logo);
 
 class Header extends Component{
-  
+
     render(){
         return(
           <div>

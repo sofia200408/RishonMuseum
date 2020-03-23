@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import './home.css'
+import Select from 'react-select';
+import './home.css';
 import logo from '../img/girl2.png';
-import bubble from '../img/bubble-text.png'
+import bubble from '../img/bubble-text.png';
 
 const formValid=({formErrors,...rest})=>{
     let valid=true;
@@ -15,6 +16,11 @@ const formValid=({formErrors,...rest})=>{
     });
     return valid;
 };
+
+const cities=[
+    {label:"Holon", value:1},
+    {label:"Netanya",value:2}
+]
 
 class Home extends Component{
     data;
@@ -54,6 +60,8 @@ class Home extends Component{
         }
 
         this.setState({ formErrors, [name]:value })
+        this.forceUpdate();
+
     }
      
     handleFormSubmit(){
@@ -65,7 +73,6 @@ class Home extends Component{
         else{
             alert("Please fill in the details");
         }     
-    
     }
 
     render(){
@@ -91,11 +98,7 @@ class Home extends Component{
                         <input type="number" min="0"/>
                     </label>
                     <label>City:
-                        <input type="text" 
-                        name="City" 
-                        onChange={this.handleChange}/>
-                        {formErrors.City.length>0 &&(<span className="errorMessage">{formErrors.City}</span>
-                        )}
+                        <Select options={cities}/>
                     </label>
                     <br />
                     <button onClick={this.handleFormSubmit}>Click</button>
