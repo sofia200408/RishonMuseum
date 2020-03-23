@@ -1,8 +1,20 @@
 import React, {Component} from 'react';
-import { Link} from "react-router-dom";
 import './home.css'
 import logo from '../img/girl2.png';
 import bubble from '../img/bubble-text.png'
+
+const formValid=({formErrors,...rest})=>{
+    let valid=true;
+
+    Object.values(formErrors).forEach(val=>{
+        val.length >0 && (valid=false);
+    })
+
+    Object.values(rest).forEach(val=>{
+        val===null && (valid=false);
+    });
+    return valid;
+};
 
 class Home extends Component{
     data;
@@ -14,7 +26,6 @@ class Home extends Component{
 
         this.state={
             TeamName:null,
-            NumberOfUsers:null,
             City:null,
 
             formErrors:{
@@ -46,7 +57,15 @@ class Home extends Component{
     }
      
     handleFormSubmit(){
-        sessionStorage.setItem("mySessionStorageDate",JSON.stringify(this.state.TeamName));        
+        if(formValid(this.state))
+        {
+            sessionStorage.setItem("mySessionStorageDate",JSON.stringify(this.state.TeamName));   
+            this.props.history.push('/codescreen');
+        }
+        else{
+            alert("Please fill in the details");
+        }     
+    
     }
 
     render(){
@@ -59,6 +78,7 @@ class Home extends Component{
             </div>
             <hr />
             <div className="box">
+                <form>
                     <label>Team Name:
                         <input type="text" 
                         name="TeamName" 
@@ -78,9 +98,8 @@ class Home extends Component{
                         )}
                     </label>
                     <br />
-                <Link to="/codescreen">
                     <button onClick={this.handleFormSubmit}>Click</button>
-                </Link>
+                </form>
             </div>
         </form>
         )
