@@ -51,10 +51,6 @@ class Home extends Component{
                 formErrors.TeamName= value.length<3 && value.length>0
                 ? "minimum 3 letters required":"";
                 break;
-            case 'City':
-                formErrors.City= value.length<3 && value.length>0
-                ? "minimum 3 letters required":"";
-                break;
             default:
                 break;
         }
@@ -97,6 +93,7 @@ class Home extends Component{
                     <label>Number of Users: 
                         <input type="number" min="0"/>
                     </label>
+                    <br />
                     <label>City:
                         <Select options={cities}/>
                     </label>
